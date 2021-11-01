@@ -38,7 +38,7 @@ body {
 .instruction-box p {
     margin: 10px;
     font-size: 20px;
-    font-weight: 700;
+    
 }
 .instruction-box.hide{
     display: none;
@@ -53,11 +53,12 @@ body {
 .btn {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: none;
     width: 150px;
     margin-top: 15px;
     font-size: 20px;
     background-color: #d5b9b2;
+    font-weight: 400;
 }
 
 .answer-box {
@@ -74,7 +75,7 @@ body {
 .answer {
     width: 200px;
     height: 40px;
-    border: 1px solid grey;
+    border: none;
     border-radius:5px;
     margin-bottom: 20px;
     text-align: center;
@@ -87,13 +88,17 @@ body {
     border-bottom: 1px solid grey;
     text-align: center;
     padding: 8px;
+    font-size: 20px;
 }
 #score {
     border-top: 1px solid grey;
     width: 700px;
     padding: 8px;
     text-align: center;
+    font-size: 20px;
 }
 .question-text {
     text-align: center;
+    margin-left: 30px;
+    margin-right:30px;
 }
