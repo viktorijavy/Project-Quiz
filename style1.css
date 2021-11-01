@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Kurenaido&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    background-color: #d5b9b2;
+    font-family:'Zen Kaku Gothic New', sans-serif;;
+    
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.container {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 100px;
+    height: 700px;
+}
+.container h1{
+    margin: 30px;
+}
+
+.instruction-box p {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.instruction-box.hide{
+    display: none;
+}
+.quiz-box {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+
+}
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 150px;
+    margin-top: 15px;
+    font-size: 20px;
+    background-color: #d5b9b2;
+}
+
+.answer-box {
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items:center;
+    margin-top: 20px;
+    
+    
+}
+.answer {
+    width: 200px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius:5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px;
+    background-color: #d5b9b2;
+}
+#questionNr {
+    width: 700px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    padding: 8px;
+}
+#score {
+    border-top: 1px solid grey;
+    width: 700px;
+    padding: 8px;
+    text-align: center;
+}
+.question-text {
+    text-align: center;
+}
