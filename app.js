@@ -2,55 +2,55 @@
 //questions will be updated
 let questions = [
     {
-        question: "What is the best tv-show ever?",
-        answers: ["game of thrones", "friends", "dark","breaking bad"],
-        correctAnswer: 1
+        question: "Who directed Twin Peaks?",
+        answers: ["David Lynch and Mark Frost", "Ryan Murphy and Steven Canals", "Quentin Tarantino","Stanley Kubrick"],
+        correctAnswer: "David Lynch and Mark Frost"
       },
       {
         question: "How much money were Friends cast paid per person/episode in the last seasons of the show?",
         answers: ["10 000", "100 000", "1 000 000","500 0000"],
       
-        correctAnswer: 2
+        correctAnswer: "1 000 000"
       },
       {
         question: "What is the best (imdb) rated tv show?",
         answers: ["Planet Earth II","Sopranos","The Wire","Game of Thrones"],
-        correctAnswer: 0
+        correctAnswer: "Planet Earth II"
       },
       {
         question: "Which tv show has produced most seasons",
         answers: ["Guiding light", "Days of our lives","Greys Anatomy","Emmerdale"],
-        correctAnswer: 0
+        correctAnswer: "Guiding light"
     },
     {
         question: "Where did the show 'The Wire' take place",
-        answers: ["Chicago", "LA", "Detroit","Baltimore"],
-        correctAnswer: 3
+        answers: ["Chicago", "LA", "Detroit", "Baltimore"],
+        correctAnswer: "Baltimore"
     },
     {
         question: "Every episode of Seinfeld contains an image or reference to what superhero?",
         answers: ["Batman","Superman","Wonderwoman","Black Panther"],
-        correctAnswer: 0
+        correctAnswer: "Superman"
     },
     {
         question: "Where was 'Dark' filmed?",
         answers: ["in Winden","in Berlin/Brandenburg","in Bavaria","in Austria"],
-        correctAnswer: 1
+        correctAnswer: "in Berlin/Brandenburg"
     },
     {
         question: "Which actor of The office was originaly director assistant before joining the cast?",
         answers: ["Jenna Fisher","Mindy Calling","B.J. Novak","Phyllis Smith"],
-        correctAnswer: 3
+        correctAnswer: "Phyllis Smith"
     },
     {
         question: "What is the best tv show about vampires?",
         answers: ["What we do in the shadows","Dark Shadows","True Blood","The Vampire diaries"],
-        correctAnswer: 0
+        correctAnswer: "What we do in the shadows"
     },
     {
         question: "Where did Breaking Bad take place?",
         answers: ["Alberqueque","Dallas","Santa Fe","Houston"],
-        correctAnswer: 0
+        correctAnswer: "Alberqueque"
     }];
     //console.log(questions)
 
@@ -58,6 +58,8 @@ let questions = [
     const questionText = document.querySelector(".question-text");
     const answerBox = document.querySelector(".answer-box");
     const nextButton = document.querySelector('.btn-next')
+    const scoreCount = document.querySelector('#score')
+    
     
     
     
@@ -66,6 +68,7 @@ let questions = [
     let scoreCounter = 0;
     let availableQuestions = [];
     let availableAnswers = [];
+    let totalScoresPossible = 10;
 
   //getting only available questions in an array
     for (let i = 0; i < questions.length; i++) {
@@ -87,7 +90,7 @@ let questions = [
       //getting question index from the questions Array
       const index1 = questions.indexOf(randomQuestion)
       questions.splice(index1, 1)
-      console.log(questions)
+      
 
       //getting possible answers in an array
       const answerLength = currentQuestion.answers.length  //// ???
@@ -100,29 +103,39 @@ let questions = [
         
           answers.innerHTML = currentQuestion.answers[i];
           answers.className = "answer";
+          answers.addEventListener('click', calculateScore)
+          
           answerBox.appendChild(answers)
-          //answers.setAttribute("onclick", "renderButton()")     
+          
     }
     questionCounter++
 }
 
-//const answerBtn = document.querySelectorAll('.answer')
-
-      
 
 
-function calculateScore() {
 
+function calculateScore(event) {
+   scoreCount.innerHTML = scoreCounter
+
+ if (event.target.innerText === currentQuestion.correctAnswer) {
+     
+    console.log("correct!")
+    scoreCounter ++
+ } else if (event.target.innerText != currentQuestion.correctAnswer) {
+    console.log('incorrect!')
+    scoreCounter
+ }
 }
+    
+
  
   
   nextButton.addEventListener('click', function() {
       if (questionCounter === 10) {
           displayResults()
      } else {
-        calculateScore()
         getNewQuestion()
-         
+        calculateScore()
      }
  })
    
