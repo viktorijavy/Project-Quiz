@@ -77,7 +77,7 @@ let questions = [
   function getNewQuestion() {
       answerBox.innerHTML = ''
       //getting question number to change at the top
-      questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of ' + questions.length
+      questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of 10' 
 
       //creating a random question variable and getting random question displayed 
       const randomQuestion = questions[Math.floor(Math.random()* questions.length)]
@@ -85,9 +85,9 @@ let questions = [
       questionText.innerHTML = currentQuestion.question
 
       //getting question index from the questions Array
-      const index1 = availableQuestions.indexOf(randomQuestion)
-      availableQuestions.splice(index1, 1)
-      console.log(availableQuestions)
+      const index1 = questions.indexOf(randomQuestion)
+      questions.splice(index1, 1)
+      console.log(questions)
 
       //getting possible answers in an array
       const answerLength = currentQuestion.answers.length  //// ???
@@ -97,14 +97,19 @@ let questions = [
       //displaying possible answers
       for (let i = 0; i < answerLength; i++) {
           const answers = document.createElement("button")
+        
           answers.innerHTML = currentQuestion.answers[i];
           answers.className = "answer";
           answerBox.appendChild(answers)
-          
-          
+          //answers.setAttribute("onclick", "renderButton()")     
     }
     questionCounter++
 }
+
+//const answerBtn = document.querySelectorAll('.answer')
+
+      
+
 
 function calculateScore() {
 
@@ -112,7 +117,7 @@ function calculateScore() {
  
   
   nextButton.addEventListener('click', function() {
-      if (questionCounter === questions.length) {
+      if (questionCounter === 10) {
           displayResults()
      } else {
         calculateScore()
