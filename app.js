@@ -1,5 +1,5 @@
 
-
+//questions will be updated
 let questions = [
     {
         question: "What is the best tv-show ever?",
@@ -67,25 +67,28 @@ let questions = [
     let availableQuestions = [];
     let availableAnswers = [];
 
-  
-    
-
- function setAvailableQuestions() {
-     for (let i = 0; i < questions.length; i++){
-       availableQuestions.push(questions[i])
-     } 
-     return availableQuestions
- } 
+  //getting only available questions in an array
+    for (let i = 0; i < questions.length; i++) {
+        availableQuestions.push(questions[i].question)
+    }
  
 
   
   function getNewQuestion() {
+      answerBox.innerHTML = ''
       //getting question number to change at the top
       questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of ' + questions.length
+
       //creating a random question variable and getting random question displayed 
       const randomQuestion = questions[Math.floor(Math.random()* questions.length)]
       currentQuestion = randomQuestion
       questionText.innerHTML = currentQuestion.question
+
+      //getting question index from the questions Array
+      const index1 = availableQuestions.indexOf(randomQuestion)
+      availableQuestions.splice(index1, 1)
+      console.log(availableQuestions)
+
       //getting possible answers in an array
       const answerLength = currentQuestion.answers.length  //// ???
       for (let i = 0; i < answerLength; i++){
@@ -93,24 +96,28 @@ let questions = [
       }
       //displaying possible answers
       for (let i = 0; i < answerLength; i++) {
-          const answer = document.createElement("button")
-          answer.innerHTML = currentQuestion.answers[i];
-          answer.className = "answer";
-          answerBox.appendChild(answer)
-
+          const answers = document.createElement("button")
+          answers.innerHTML = currentQuestion.answers[i];
+          answers.className = "answer";
+          answerBox.appendChild(answers)
+          
           
     }
     questionCounter++
 }
 
+function calculateScore() {
 
+}
  
   
   nextButton.addEventListener('click', function() {
       if (questionCounter === questions.length) {
           displayResults()
      } else {
-         getNewQuestion()
+        calculateScore()
+        getNewQuestion()
+         
      }
  })
    
