@@ -58,7 +58,7 @@ let questions = [
     const questionText = document.querySelector(".question-text");
     const answerBox = document.querySelector(".answer-box");
     const nextButton = document.querySelector('.btn-next')
-    const startButton = document.querySelector('.start-button')
+    
     
     
     let questionCounter = 0;
@@ -82,24 +82,27 @@ let questions = [
   function getNewQuestion() {
       //getting question number to change at the top
       questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of ' + questions.length
-      //getting a random question displayed
+      //creating a random question variable and getting random question displayed 
       const randomQuestion = questions[Math.floor(Math.random()* questions.length)]
       currentQuestion = randomQuestion
       questionText.innerHTML = currentQuestion.question
       //getting possible answers in an array
-      const answerLength = currentQuestion.answers.length
+      const answerLength = currentQuestion.answers.length  //// ???
       for (let i = 0; i < answerLength; i++){
           availableAnswers.push(i)
       }
       //displaying possible answers
-      for (let i=0; i < answerLength; i++) {
+      for (let i = 0; i < answerLength; i++) {
           const answer = document.createElement("button")
           answer.innerHTML = currentQuestion.answers[i];
           answer.className = "answer";
           answerBox.appendChild(answer)
+
+          
     }
     questionCounter++
 }
+
 
  
   
