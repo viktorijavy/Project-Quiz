@@ -106,6 +106,14 @@ a {
     text-decoration: none;
     color: black;
 }
-.active {
-    background-color: #9a8c98;
+.hide {
+    display: none;
+}
+.results h1{
+    font-size: 40px;
+    
+}
+.results p {
+    font-size: 20px;
+    font-weight: 500;
 }

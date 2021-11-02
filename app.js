@@ -2,12 +2,12 @@
 //questions will be updated
 let questions = [
     {
-        question: "Who directed Twin Peaks?",
+        question: "Who directed 'Twin Peaks'?",
         answers: ["David Lynch and Mark Frost", "Ryan Murphy and Steven Canals", "Quentin Tarantino","Stanley Kubrick"],
         correctAnswer: "David Lynch and Mark Frost"
       },
       {
-        question: "How much money were Friends cast paid per person/episode in the last seasons of the show?",
+        question: "How much money were 'Friends' cast paid per person/episode in the last seasons of the show?",
         answers: ["10 000", "100 000", "1 000 000","500 0000"],
       
         correctAnswer: "1 000 000"
@@ -18,17 +18,17 @@ let questions = [
         correctAnswer: "Planet Earth II"
       },
       {
-        question: "Which tv show has produced most seasons",
+        question: "Which tv show has produced most seasons?",
         answers: ["Guiding light", "Days of our lives","Greys Anatomy","Emmerdale"],
         correctAnswer: "Guiding light"
     },
     {
-        question: "Where did the show 'The Wire' take place",
+        question: "Where did the show 'The Wire' take place?",
         answers: ["Chicago", "LA", "Detroit", "Baltimore"],
         correctAnswer: "Baltimore"
     },
     {
-        question: "Every episode of Seinfeld contains an image or reference to what superhero?",
+        question: "Every episode of 'Seinfeld' contains an image or reference to what superhero?",
         answers: ["Batman","Superman","Wonderwoman","Black Panther"],
         correctAnswer: "Superman"
     },
@@ -38,7 +38,7 @@ let questions = [
         correctAnswer: "in Berlin/Brandenburg"
     },
     {
-        question: "Which actor of The office was originaly director assistant before joining the cast?",
+        question: "Which actor of 'The office' was originaly director assistant before joining the cast?",
         answers: ["Jenna Fisher","Mindy Calling","B.J. Novak","Phyllis Smith"],
         correctAnswer: "Phyllis Smith"
     },
@@ -48,9 +48,9 @@ let questions = [
         correctAnswer: "What we do in the shadows"
     },
     {
-        question: "Where did Breaking Bad take place?",
-        answers: ["Alberqueque","Dallas","Santa Fe","Houston"],
-        correctAnswer: "Alberqueque"
+        question: "Where did 'Breaking Bad' take place?",
+        answers: ["Albuquerque","Dallas","Santa Fe","Houston"],
+        correctAnswer: "Albuquerque"
     }];
     //console.log(questions)
 
@@ -59,7 +59,9 @@ let questions = [
     const answerBox = document.querySelector(".answer-box");
     const nextButton = document.querySelector('.btn-next')
     const scoreCount = document.querySelector('#score')
-    
+    const resultPage = document.querySelector('.results')
+    const quizPage = document.querySelector('.quiz-box')
+    const resultText = document.querySelector('.resultcount')
     
     
     
@@ -115,19 +117,27 @@ let questions = [
 
 
 function calculateScore(event) {
-   scoreCount.innerHTML = scoreCounter
+   scoreCount.innerHTML = 'Score: ' + scoreCounter
 
  if (event.target.innerText === currentQuestion.correctAnswer) {
-     
+    scoreCounter ++ 
     console.log("correct!")
-    scoreCounter ++
- } else if (event.target.innerText != currentQuestion.correctAnswer) {
+    
+ } else if (event.target.innerText !== currentQuestion.correctAnswer) {
     console.log('incorrect!')
     scoreCounter
  }
 }
     
-
+function displayResults() {
+   
+ resultPage.classList.remove('hide')
+ quizPage.classList.add('hide') 
+ resultText.innerHTML = scoreCounter
+ if (scoreCounter > 6) {
+     
+ }
+}
  
   
   nextButton.addEventListener('click', function() {
