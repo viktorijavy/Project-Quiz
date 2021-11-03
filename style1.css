@@ -117,3 +117,7 @@ a {
     font-size: 20px;
     font-weight: 500;
 }
+.clicked-btn {
+    background-color: #4a4e69;
+    color: white;
+}

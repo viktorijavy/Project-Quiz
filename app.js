@@ -8,9 +8,9 @@ let questions = [
       },
       {
         question: "How much money were 'Friends' cast paid per person/episode in the last seasons of the show?",
-        answers: ["10 000", "100 000", "1 000 000","500 0000"],
+        answers: ["$10 000", "$100 000", "$1 000 000","$500 0000"],
       
-        correctAnswer: "1 000 000"
+        correctAnswer: "$1 000 000"
       },
       {
         question: "What is the best (imdb) rated tv show?",
@@ -18,8 +18,8 @@ let questions = [
         correctAnswer: "Planet Earth II"
       },
       {
-        question: "Which tv show has produced most seasons?",
-        answers: ["Guiding light", "Days of our lives","Greys Anatomy","Emmerdale"],
+        question: "Which tv show has produced most seasons (72)?",
+        answers: ["Guiding light", "Days of our lives","Grey's Anatomy","Emmerdale"],
         correctAnswer: "Guiding light"
     },
     {
@@ -62,6 +62,8 @@ let questions = [
     const resultPage = document.querySelector('.results')
     const quizPage = document.querySelector('.quiz-box')
     const resultText = document.querySelector('.resultcount')
+    const youLose = document.querySelector('.you-lose')
+    const congrats = document.querySelector('.congrats') 
     
     
     
@@ -95,7 +97,7 @@ let questions = [
       
 
       //getting possible answers in an array
-      const answerLength = currentQuestion.answers.length  //// ???
+      const answerLength = currentQuestion.answers.length  
       for (let i = 0; i < answerLength; i++){
           availableAnswers.push(i)
       }
@@ -105,37 +107,54 @@ let questions = [
         
           answers.innerHTML = currentQuestion.answers[i];
           answers.className = "answer";
-          answers.addEventListener('click', calculateScore)
+          answers.addEventListener('click', renderButton)
           
           answerBox.appendChild(answers)
           
     }
     questionCounter++
 }
+//console.log(answerBox)
+
+let clickedAnswer = ''
 
 
+function renderButton(event) {
+   
+clickedAnswer = event.target.innerText
+
+let clickedBtn = event.target
+clickedBtn.classList.add('clicked-btn')
 
 
-function calculateScore(event) {
-   scoreCount.innerHTML = 'Score: ' + scoreCounter
+if (clickedAnswer === currentQuestion.correctAnswer) {
+        scoreCounter ++ 
+        console.log('correct')
+        
+        
+     } else if (clickedAnswer !== currentQuestion.correctAnswer) {
+        console.log('incorrect!')
+        scoreCounter
+     }
 
- if (event.target.innerText === currentQuestion.correctAnswer) {
-    scoreCounter ++ 
-    console.log("correct!")
-    
- } else if (event.target.innerText !== currentQuestion.correctAnswer) {
-    console.log('incorrect!')
-    scoreCounter
- }
+ 
+
 }
+
+function calculateScore() {
     
+scoreCount.innerHTML = 'Score: ' + scoreCounter
+}
+
 function displayResults() {
    
  resultPage.classList.remove('hide')
  quizPage.classList.add('hide') 
  resultText.innerHTML = scoreCounter
  if (scoreCounter > 6) {
-     
+    congrats.innerText = 'Well done!'
+ } else {
+    youLose.innerText = 'Not great!'
  }
 }
  
