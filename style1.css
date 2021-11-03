@@ -73,8 +73,8 @@ body {
     
 }
 .answer {
-    width: 200px;
-    height: 40px;
+    width: 220px;
+    height: 45px;
     border: none;
     border-radius:5px;
     margin-bottom: 20px;
@@ -121,4 +121,9 @@ a {
     background-color: #4a4e69;
     color: white;
 }
-
+.win-hide {
+    display: none;
+}
+.lose-hide {
+    display: none;
+}

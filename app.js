@@ -43,9 +43,9 @@ let questions = [
         correctAnswer: "Phyllis Smith"
     },
     {
-        question: "What is the best tv show about vampires?",
-        answers: ["What we do in the shadows","Dark Shadows","True Blood","The Vampire diaries"],
-        correctAnswer: "What we do in the shadows"
+        question: "What is the most awarded TV show(291 wins)?",
+        answers: ["Game of Thrones","Simpsons","Squid Game","Breaking Bad"],
+        correctAnswer: "Game of Thrones"
     },
     {
         question: "Where did 'Breaking Bad' take place?",
@@ -144,6 +144,10 @@ function calculateScore() {
 scoreCount.innerHTML = 'Score: ' + scoreCounter
 }
 
+
+
+
+
 function displayResults() {
    
  resultPage.classList.remove('hide')
@@ -151,8 +155,12 @@ function displayResults() {
  resultText.innerHTML = scoreCounter
  if (scoreCounter > 6) {
     congrats.innerText = 'Well done!'
+    winningGif = document.querySelector('.win-hide')
+    winningGif.classList.remove('win-hide')
  } else {
     youLose.innerText = 'Not great!'
+    loosingGif = document.querySelector('.lose-hide')
+    loosingGif.classList.remove('lose-hide')
  }
 }
  
