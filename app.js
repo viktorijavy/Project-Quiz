@@ -117,27 +117,25 @@ let questions = [
 //console.log(answerBox)
 
 let clickedAnswer = ''
-
+let answerClicked = false;
 
 function renderButton(event) {
-   
+if (answerClicked === false) {
+
 clickedAnswer = event.target.innerText
-
-let clickedBtn = event.target
-clickedBtn.classList.add('clicked-btn')
-
-
+event.target.classList.add('clicked-btn')
 if (clickedAnswer === currentQuestion.correctAnswer) {
         scoreCounter ++ 
         console.log('correct')
-        
+        answerClicked = true
         
      } else if (clickedAnswer !== currentQuestion.correctAnswer) {
-        console.log('incorrect!')
-        scoreCounter
+        console.log('incorrect!');
+        scoreCounter;
+        answerClicked = true
      }
 
- 
+    }
 
 }
 
@@ -164,6 +162,7 @@ function displayResults() {
           displayResults()
      } else {
         getNewQuestion()
+        answerClicked = false
         calculateScore()
      }
  })
