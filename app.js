@@ -20,9 +20,9 @@ let questions = [
         id: 3
       },
       {
-        question: "Which tv show has produced most seasons (72)?",
-        answers: ["Guiding light", "Days of our lives","Grey's Anatomy","Emmerdale"],
-        correctAnswer: "Guiding light",
+        question: "How many cigarettes did Cillian Murphy smoked on set of 'Peaky Blinders' in total?",
+        answers: ["500", "50","1000","3000"],
+        correctAnswer: "3000",
         id: 4
     },
     {
@@ -50,7 +50,7 @@ let questions = [
         id: 8
     },
     {
-        question: "What is the most awarded TV show(291 wins)?",
+        question: "What is the most awarded TV show?",
         answers: ["Game of Thrones","Simpsons","Squid Game","Breaking Bad"],
         correctAnswer: "Game of Thrones",
         id: 9
@@ -135,25 +135,25 @@ function addImage() {
     
       
       if (currentQuestion.id === 1) {
-          img.src ="pics/Audrey.jpg";
+          img.src ="pics/twin-peaks.gif";
       } else if (currentQuestion.id === 2) {
-          img.src ="pics/friends.jpg";
+          img.src ="pics/friends1.gif";
       } else if (currentQuestion.id === 3) {
           img.src = "pics/imdb.png";
       } else if (currentQuestion.id === 4) {
-          img.src = "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/tommy.gif";
       } else if (currentQuestion.id === 5) {
-          img.src = "https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/wire.jpg";
       } else if (currentQuestion.id === 6) {
           img.src = "pics/seinfeld.jpg";
       } else if (currentQuestion.id === 7) {
-          img.src = "https://images.unsplash.com/photo-1543536448-d209d2d13a1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1vdmllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/dark1.gif";
       } else if (currentQuestion.id === 8) {
-          img.src = "https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG1vdmllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/office1.jpg";
       } else if (currentQuestion.id === 9) {
           img.src = "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fG1vdmllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
       } else if (currentQuestion.id === 10) {
-          img.src = "pics/bvg-ticket1.jpg";
+          img.src = "pics/Ulrich.gif";
       }
 }
 
