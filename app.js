@@ -14,9 +14,9 @@ let questions = [
         id: 2
       },
       {
-        question: "What is the best (imdb) rated tv show?",
-        answers: ["Planet Earth II","Sopranos","The Wire","Game of Thrones"],
-        correctAnswer: "Planet Earth II",
+        question: "What is the best (imdb) rated German tv show?",
+        answers: ["Dark","Babylon Berlin","4 Blocks","Generation War"],
+        correctAnswer: "Dark",
         id: 3
       },
       {
@@ -56,9 +56,9 @@ let questions = [
         id: 9
     },
     {
-        question: "Where did 'Breaking Bad' take place?",
-        answers: ["Albuquerque","Dallas","Santa Fe","Houston"],
-        correctAnswer: "Albuquerque",
+        question: "21st of June 2019 BVG released a day ticket that was valid on that day, and exactly 33 years later. To honor which TV serie?",
+        answers: ["Babylon Berlin", "Dark","Stranger Things","Time Travelers"],
+        correctAnswer: "Dark",
         id: 10
     }];
     //console.log(questions)
@@ -127,23 +127,25 @@ let questions = [
     questionCounter++
 }
 
+let img = new Image();
+img.className = "img";
+imageContainer.appendChild(img) 
+
 function addImage() {
     
-      let img = new Image();
-      img.className = "img";
-      imageContainer.appendChild(img) 
+      
       if (currentQuestion.id === 1) {
-          img.src ="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bmV0ZmxpeHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src ="pics/Audrey.jpg";
       } else if (currentQuestion.id === 2) {
-          img.src ="https://images.unsplash.com/photo-1586899028174-e7098604235b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHR2JTIwc2hvd3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src ="pics/friends.jpg";
       } else if (currentQuestion.id === 3) {
-          img.src = "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/imdb.png";
       } else if (currentQuestion.id === 4) {
           img.src = "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
       } else if (currentQuestion.id === 5) {
           img.src = "https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
       } else if (currentQuestion.id === 6) {
-          img.src = "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/seinfeld.jpg";
       } else if (currentQuestion.id === 7) {
           img.src = "https://images.unsplash.com/photo-1543536448-d209d2d13a1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1vdmllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
       } else if (currentQuestion.id === 8) {
@@ -151,7 +153,7 @@ function addImage() {
       } else if (currentQuestion.id === 9) {
           img.src = "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fG1vdmllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
       } else if (currentQuestion.id === 10) {
-          img.src = "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
+          img.src = "pics/bvg-ticket1.jpg";
       }
 }
 
