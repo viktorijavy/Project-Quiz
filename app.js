@@ -61,7 +61,7 @@ let questions = [
         correctAnswer: "Dark",
         id: 10
     }];
-    //console.log(questions)
+    
 
     const questionNumber = document.querySelector("#questionNr");
     const questionText = document.querySelector(".question-text");
@@ -88,7 +88,7 @@ let questions = [
         availableQuestions.push(questions[i].question)
     }
  
-//let changingImg = document.querySelector('.img1')
+
   
   function getNewQuestion() {
       answerBox.innerHTML = ''
@@ -196,7 +196,7 @@ function displayResults() {
     winningGif = document.querySelector('.win-hide')
     winningGif.classList.remove('win-hide')
  } else {
-    youLose.innerText = 'Not great!'
+    youLose.innerText = 'Still some room for improvement!'
     loosingGif = document.querySelector('.lose-hide')
     loosingGif.classList.remove('lose-hide')
  }
